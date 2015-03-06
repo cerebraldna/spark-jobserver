@@ -19,7 +19,7 @@ import scala.concurrent.duration.Duration
  */
 trait NamedRdds {
   // Default timeout is 60 seconds. Hopefully that is enough to let most RDD generator functions finish.
-  val defaultTimeout = akka.util.Timeout(Duration(60, java.util.concurrent.TimeUnit.SECONDS))
+  protected var defaultTimeout = akka.util.Timeout(Duration(60, java.util.concurrent.TimeUnit.SECONDS))
 
   // Default level to cache RDDs at.
   val defaultStorageLevel = StorageLevel.MEMORY_ONLY
